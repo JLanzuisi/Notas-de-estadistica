@@ -1,3 +1,3 @@
 # Libro de estadistica echo por io
 
-Lo que dise el titulo oiga
+Lo que nose el titulo oiga
