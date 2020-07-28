@@ -1,0 +1,64 @@
+\chapter{Probabilidad}%
+\label{cha:Probabilidad}
+
+\section{Repaso de teoría de conjuntos}%
+\label{sec:teoria-conj}
+
+Aquí revisaremos los requisitos básicos de la teoría de conjuntos.
+
+\section{Función de probabilidad}%
+\label{sec:funcion_probabilidad}
+
+Nos interesa considerar la probabilidad de que un evento particular ocurra, dado que hemos realizado algún experimento.
+Llamaremos espacio de muestras a el conjunto de todos los resultados posibles de nuestro experimento, y lo denotaremos por $\mathcal{C}$.
+Nos interesa entonces una función que asigne probabilidades a los los subconjuntos de $\mathcal{C}$, es decir, a los resultados posibles de nuestro experimento.
+
+Si ocurriese que $\mathcal{C}$ es \emph{finito}, entonces bastaría conseguir una función que asigne una probabilidad a cada uno de los subconjuntos de $\mathcal{C}$.
+Sin embargo, si nuestro espacio de muestra es \emph{infinito} entonces buscar una función con la propiedad anterior es una tarea que se encuentra rápidamente con varias sutilezas matématicas que no viene al caso explicar.
+
+La nocion de una función de probabilidad, que se explicará en breve, puede explicarse de manera más intuitiva partiendo del concepto de \emph{frequencia}.
+Si realizamos un experimento y queremos saber la frequencia con que ocurrió evento $A$ (es decir, $A\subset\mathcal{C}$) entonces basta con dividir la cantidad de veces que ocurrió el evento $A$ por la cantidad de veces que se repitió el experimento.
+Notemos que la frequencia del evento $A$ es mayor o igual que cero y menor que uno---recordemos que es un cociente, para la frecuencia ser mayor que $1$ el evento $A$ tendría que haber ocurrido \emph{mas veces} de las que se repitió el experimento. 
+Además al frequencia del espacio de muestra es igual a $1$ pues estamos seguros de que seguros de que este ocurre, trivialmente, cada vez que se repite el experimento. 
+Por último, si $A$ y $B$ son dos eventos independientes, esto es, que la realizacion de uno no afecta al otro, entonces la frequencia de que ocurran ambos es la suma de las frequencias de cada uno.
+
+\begin{defi}
+	Sea $\mathcal{C}$ un espacio de muestras. Una función $P\colon\mathcal{P}(\mathcal{C})\to\mathbb{R}$ es llamada \Keyword{de probabilidad} si cumple con la siguientes propiedades:
+	\begin{enumerate}
+		\item $P(A)\geq0$ para todo $A\in\mathcal{C}$,
+		\item $P(\mathcal{C})=1$  y
+		\item Si los subconjuntos $A_1,\dots,A_n$ de $\mathcal{C}$ son disjuntos, entonces
+			\[ P(A_1\cup\dots\cup A_n)=P(A_1)+\dots+P(A_n) \]
+	\end{enumerate}
+\end{defi}
+
+\noindent
+Los siguientes teoremas nos dan varias propiedades de la funcion de probabilidad.
+
+\begin{teo}
+	Para cada evento $A$ se tiene que $P(A)=1-P(A^c)$
+\end{teo}
+\begin{proof}
+	Como la unión $A\cup A^c$ es disjunta, se sigue que
+	\[
+		P(A\cup A^c)=P(A)+P(A^c).
+	\]
+\end{proof}
+\begin{teo}
+	La probabilidad del conjunto vacío es cero.
+\end{teo}
+\begin{teo}
+	Si $A$ y $B$ son eventos tales que $A\subset B$ entonces
+	\[
+		P(A)\leq P(B).
+	\]
+\end{teo}
+
+El siguiente teorema, que usa la llamada \emph{regla de inclusión-exclusión}, nos dice como es al probabilidad de una unión de eventos incluso cuando estos no son disjuntos.
+
+\begin{teo}
+	Si $A$ y $B$ son dos eventos, posiblemente no disjuntos, entonces
+	\[
+		P(A\cup B) = P(A)+P(B)-P(A\cap B).
+	\]
+\end{teo}

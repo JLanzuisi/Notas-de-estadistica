@@ -1,0 +1,39 @@
+%!TEX TS-program = lualatex
+\documentclass[10pt,draft]{book}
+\input{../Universidad/preamble-book.tex}
+
+\includeonly{
+metadata,
+notas-primera-ed,
+probabilidad,
+variablesAl-distribuciones
+}
+
+\begin{document}
+%
+\begin{titlepage}
+\input{paginaTitulo}	
+\end{titlepage}	
+%
+\thispagestyle{empty}
+\frontmatter
+\include{metadata}
+\begin{center}
+\begin{minipage}{.7\textwidth}
+\tableofcontents
+\end{minipage}
+\end{center}
+\include{notas-primera-ed}
+%
+\mainmatter
+\part{Probabilidad \& Distribuciones}
+\include{probabilidad}
+\include{variablesAl-distribuciones}
+\part{Inferencia Estadística}
+%
+\backmatter
+\printbibliography[
+heading=bibintoc,
+title={Referencias}
+]
+\end{document}
